@@ -1,2 +1,35 @@
 # LinuxInfo
 a simple tool to do reconnaissance on a linux system
+## Installing
+
+Requirements: <br/>
+
+<li> BeautifulSoup4 </li>
+
+```bash
+pip install bs4
+```
+<li> requests </li>
+
+```bash
+pip install requests
+```
+<li> python 3.7 </li>
+<br/>
+## Usage
+Basic usage:
+
+```bash
+git clone https://github.com/Br34kC0d8/LinuxInfo
+python3 app.py  
+```
+
+## Main features
+
+* Detect network connection
+* Kill process
+* Block Connections
+* User Info
+* OS info and kernel info
+
+# We are trying to write more functions feel free to fork and add more functions
