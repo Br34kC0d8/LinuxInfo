@@ -4,18 +4,9 @@ a simple tool to do reconnaissance on a linux system
 
 Requirements: <br/>
 
-<li> BeautifulSoup4 </li>
-
-```bash
-pip install bs4
-```
-<li> requests </li>
-
-```bash
-pip install requests
-```
 <li> python 3.7 </li>
 <br/>
+
 ## Usage
 Basic usage:
 
