@@ -62,12 +62,14 @@ class info:
     def OSinfo(self):
         os.system('clear')
         sleep(1)
-        print('[+] Disk Usage -> 1')
-        print('[+] Process Listing -> 2')
-        print('[+] Kernel Version/Kernel info -> 3')
-        print('[+] OS info/OS version info -> 4')
-        print('[+] Mounted Filesystems -> 5')
-        print('[+] Exit Program -> 6')
+        print("""
+            [+] Disk Usage -> 1
+            [+] Process Listing -> 2
+            [+] Kernel Version/Kernel info -> 3
+            [+] OS info/OS version info -> 4
+            [+] Mounted Filesystems -> 5
+            [+] Exit Program -> 6
+        """)
         sleep(1)
         res = str(input('L0g1c4lB0mb ➮ '))
         if res == '1':
