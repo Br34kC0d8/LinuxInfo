@@ -2,18 +2,18 @@
 a simple tool to do reconnaissance on a linux system
 
 
-Requirements: <br/>
+ Requirements: <br/>
 
-<li> python 3.7 </li>
-<br/>
+ <li> python 3.7 </li>
+ <br/>
 
-## Usage
-Basic usage:
+ ## Usage
+ Basic usage:
 
-```bash
-git clone https://github.com/Br34kC0d8/LinuxInfo
-python3 app.py  
-```
+ ```bash
+  git clone https://github.com/Br34kC0d8/LinuxInfo
+  python3 app.py  
+  ```
 
 ## Main features
 
