@@ -22,5 +22,6 @@ a simple tool to do reconnaissance on a linux system
 * Block Connections
 * User Info
 * OS info and kernel info
+* "Cover your Tracks"
 
 # We are trying to write more functions feel free to fork and add more functions
