@@ -1,5 +1,5 @@
-# LinuxInfo
-a simple tool to do reconnaissance on a linux system
+ # LinuxInfo
+ a simple tool to do reconnaissance on a linux system
 
 
  Requirements: <br/>
@@ -15,13 +15,13 @@ a simple tool to do reconnaissance on a linux system
   python3 app.py  
   ```
 
-## Main features
+ ## Main features
 
-* Detect network connection
-* Kill process
-* Block Connections
-* User Info
-* OS info and kernel info
-* "Cover your Tracks"
+ * Detect network connection
+ * Kill process
+ * Block Connections
+ * User Info
+ * OS info and kernel info
+ * "Cover your Tracks"
 
-# We are trying to write more functions feel free to fork and add more functions
+ # We are trying to write more functions feel free to fork and add more functions
