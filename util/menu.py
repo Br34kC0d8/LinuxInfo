@@ -2,9 +2,9 @@
 import os
 from time import sleep
 
-from libss.network import network
-from libss.info import info
-from libss.clear import clear
+from libs.network import network
+from libs.info import info
+from libs.clear import clear
 from util.prints import prints
 class menu:
     def MainMenu():
