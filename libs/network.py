@@ -3,8 +3,8 @@ from time import sleep
 import sys
 from util.prints import prints
 from util.wrap import wrap
-from libss.info import info
-from libss.clear import clear
+from libs.info import info
+from libs.clear import clear
 class network:  
     def menu(self):
         os.system('clear')
