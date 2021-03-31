@@ -3,33 +3,32 @@ from time import sleep
 import sys
 from util.prints import prints
 from util.wrap import wrap
-from libs.info import info
-from libs.clear import clear
+import util.menu as mn
 class network:  
     def menu(self):
         os.system('clear')
         wr = wrap()
         sleep(1)
-        
+        m = mn.menu()
         prints.netMenu() 
         res = str(input('L0g1c4lB0mb ➮ '))
         if res == '1':
             self.networkcon()
-            
+            m.retm()
         elif res == '2':
             wr.init('netstat -ant')
-            self.retm() 
+            m.retm() 
         elif res == '3':
             wr.init('netstat -tulnp')
-            self.retm()
+            m.retm()
         elif res == '4':
             wr.init('lsof -i')
-            self.retm()
+            m.retm()
         elif res == '5':
             print('PID to kill ')
             res = str(input('L0g1c4lB0mb ➮ '))
             self.killProcess(res)
-            self.retm()
+            m.retm()
         elif res == '6':
             os.system('clear')
             print('[+] IPs to kick  --> ')
@@ -42,7 +41,7 @@ class network:
             print('Connection port')
             port = str(input('L0g1c4lB0mb ➮ '))
             self.killcon(ip,port)
-            self.retm()
+            m.retm()
         elif res == '7':
             os.system('clear')
             exit()
@@ -72,16 +71,6 @@ class network:
             self.menu()
         elif res == 'n':
             self.menu()
-    def retm(self):
-        prints.retMenu()
-        res = str(input('L0g1c4lB0mb ➮ '))
-        if res == '1':
-            self.menu()
-        elif res == '2':
-            inf = info()
-            inf.menu()
-        elif res == '3':
-            clr = clear()
-            clr.menu()
+    
 
 
