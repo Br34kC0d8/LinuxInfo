@@ -1,13 +1,15 @@
 import os 
 import sys
 from time import sleep
-
-
-
+from util.wrap import wrap
+from util.prints import prints
+import util.menu as mn
 class clear:
     def menu(self):
         os.system('clear')
         sleep(1)
+        wr = wrap()
+        m = mn.menu()
         print("""
             [+] Disable history logging -> 1
             [+] Clear auth.log -> 2
@@ -21,31 +23,37 @@ class clear:
         """)
         res = str(input('L0g1c4lB0mb ➮ '))
         if res == '1':
-            self.wrapp("[*] Disable History Logging ",'unset HISTFILE')
+            wr.msgWrap("[*] Disable History Logging ",'unset HISTFILE')
+            
+            m.retm()
         elif res == '2':
-            self.wrapp("[*] Clear auth.log",'echo "" /var/log/auth.log')     
+            wr.msgWrap("[*] Clear auth.log",'echo "" /var/log/auth.log')
+            m.retm()    
         elif res == '3':
-            self.wrapp("[*] Clear Current user bash history ",'echo "" ~/.bash_history')
+            wr.msgWrap("[*] Clear Current user bash history ",'echo "" ~/.bash_history')
+            m.retm()
         elif res == '4':
-            self.wrapp("[*] Delete bash history ",'rm ~/.bash_history -rf')    
+            wr.msgWrap("[*] Delete bash history ",'rm ~/.bash_history -rf')
+            m.retm()   
         elif res == '5':
-            self.wrapp("[*] Set history max lines ",'export HISTFILESIZE=O')
+            wr.msgWrap("[*] Set history max lines ",'export HISTFILESIZE=O')
+            m.retm() 
         elif res == '6':
-            self.wrapp("[*] Set history max commands ",'export HISTSIZE=O')
+            wr.msgWrap("[*] Set history max commands ",'export HISTSIZE=O')
+            m.retm()
         elif res == '7':
-            self.wrapp("[*] Kill Current sessions ",'kill -9 $$')
+            wr.msgWrap("[*] Kill Current sessions ",'kill -9 $$')
+            m.retm()
         elif res == '8':
-            self.wrapp("[*] Send all bash history to /dev/null ",'ln /dev/null -/.bash_history -sf')        
+            wr.msgWrap("[*] Send all bash history to /dev/null ",'ln /dev/null -/.bash_history -sf')
+            m.retm()        
         elif res == '9':
             exit()
 
-    def wrapp(self,msg,comm):
-        print(msg)
-        sleep(0.5)
-        os.system(comm)
-        sleep(1)
-        os.system('clear')
-        self.menu()
+    
+
+    
+        
         
 
 
