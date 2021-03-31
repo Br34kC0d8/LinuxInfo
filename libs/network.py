@@ -1,32 +1,35 @@
 import os 
 from time import sleep
 import sys
-class network():
+from util.prints import prints
+from util.wrap import wrap
+from libss.info import info
+from libss.clear import clear
+class network:  
     def menu(self):
         os.system('clear')
+        wr = wrap()
         sleep(1)
-        print("""
-            [+] Network Connections -> 1
-            [+] TCP Connections -> 2
-            [+] Network Connections with PID -> 3
-            [+] Established Connections -> 4
-            [+] Kill Process -> 5
-            [+] Block Connection -> 6
-            [+] Exit Program -> 7
-        """)       
+        
+        prints.netMenu() 
         res = str(input('L0g1c4lB0mb ➮ '))
         if res == '1':
             self.networkcon()
+            
         elif res == '2':
-            self.tcpconn()
+            wr.init('netstat -ant')
+            self.retm() 
         elif res == '3':
-            self.pidconn()
+            wr.init('netstat -tulnp')
+            self.retm()
         elif res == '4':
-            self.estbconn()
+            wr.init('lsof -i')
+            self.retm()
         elif res == '5':
             print('PID to kill ')
             res = str(input('L0g1c4lB0mb ➮ '))
             self.killProcess(res)
+            self.retm()
         elif res == '6':
             os.system('clear')
             print('[+] IPs to kick  --> ')
@@ -39,6 +42,7 @@ class network():
             print('Connection port')
             port = str(input('L0g1c4lB0mb ➮ '))
             self.killcon(ip,port)
+            self.retm()
         elif res == '7':
             os.system('clear')
             exit()
@@ -51,53 +55,7 @@ class network():
         os.system('watch ss -tp')
         self.menu()
 
-    def tcpconn(self):
-        os.system('clear')
-        sleep(0.3)
-        os.system('netstat -ant')
-        print('\n')
-        sleep(2) 
-        print("""[+] Regresar al menu -> 1
-            [+] Salir -> 2
-        """)
-        res = str(input('L0g1c4lB0mb ➮ '))
-        if res == '1':
-            self.menu()
-        elif res == '2':
-            exit()
-
-    def pidconn(self):
-        os.system('clear')
-        sleep(0.5)
-        os.system('netstat -tulnp')
-        print('\n')
-        sleep(2)
-        print("""
-            [+] Regresar al menu -> 1
-            [+] Salir -> 2
-        """)
-        sleep(1)
-        res = str(input('L0g1c4lB0mb ➮ '))
-        if res == '1':
-            self.menu()
-        elif res == '2':
-            exit()
-
-    def estbconn(self):
-        os.system('clear')
-        os.system('lsof -i')
-        print('\n')
-        sleep(2)
-        print("""
-            [+] Regresar al menu -> 1
-            [+] Salir -> 2
-        """)
-        sleep(1)
-        res = str(input('L0g1c4lB0mb ➮ '))
-        if res == '1':
-            self.menu()
-        elif res == '2':
-            exit()
+                
 
     def killProcess(self,proc):
         os.system('kill %s' % proc)
@@ -114,3 +72,16 @@ class network():
             self.menu()
         elif res == 'n':
             self.menu()
+    def retm(self):
+        prints.retMenu()
+        res = str(input('L0g1c4lB0mb ➮ '))
+        if res == '1':
+            self.menu()
+        elif res == '2':
+            inf = info()
+            inf.menu()
+        elif res == '3':
+            clr = clear()
+            clr.menu()
+
+
