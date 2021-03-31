@@ -39,6 +39,12 @@ class prints:
             [+] "cover your tracks" Menu -> 3
             [+] Exit -> 4
         """)
+    def infoMn():
+        print("""
+            [+] User Info -> 1
+            [+] OS info -> 2
+            [+] Exit Programm -> 3
+        """)
         
           
         
